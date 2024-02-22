@@ -1,0 +1,286 @@
+* {
+    box-sizing: border-box; 
+    padding: 0;
+    margin: 0;
+  }
+  
+  body {
+    background-color: rgb(0, 0, 0);
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    align-content: center;
+  }
+  
+  #background {  /* Background video Style  */
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  h1 { /* Captain Aj Text Style */
+    font-size: 15px;
+    box-sizing: border-box;
+    padding-top: 2px;
+    margin-left: 45%;
+    position: absolute;
+    color: #009a22;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  }
+  
+  #Back { /* To position the calculator to the centor */
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    align-content: center;
+  }
+  
+  /*  Spinning  SetUp */
+  
+  #CalculatorBottom { 
+    position: absolute;
+    width: 510px;
+    height: 540px;
+    justify-content: center;
+    background-color: rgb(0, 0, 0);
+    margin: auto;
+    border-radius: 24px;
+    border: 2px solid;
+    border-color: #36ba01;
+    z-index: 5;
+    margin-top: 15px;
+    overflow: hidden;
+    align-items: center;
+  }
+  #CalculatorBottom::before {
+    content: "";
+    position: absolute;
+    width: 180px;
+    height: 180%;
+    background-color: rgb(44, 138, 10);
+    box-shadow: 0 0 20px rgb(8, 8, 8);
+    animation: animate 1s linear infinite;
+    align-items: center;
+    z-index: -4;
+    left: 150px;
+    top: -250px;
+  }
+  #CalculatorBottom.modified::before {
+    background-color: rgb(255, 0, 0);
+  }
+  #CalculatorBottom.modified2::before {
+    background-color: rgb(44, 138, 10);
+  }
+  #CalculatorBottom::after {
+    content: "";
+    width: 510px;
+    height: 180%;
+    background-color: rgb(0, 0, 0);
+    margin: auto;
+    /* top: 10px; */
+    border-radius: 24px;
+    border-color: #36ba01;
+    z-index: -4;
+    margin-top: 15px;
+  }
+  
+  @keyframes animate { /*  to spin the bar 360 deg  */
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  #spinningHider { /* Cover the spinning bar to see the bar spinning like a dot  */
+    width: 500px;
+    height: 530px;
+    background-color: rgb(0, 0, 0);
+    margin: auto;
+    /* top: 10px; */
+    border-radius: 24px;
+    border: 1px solid;
+    border-color: #36ba01;
+    margin-bottom: 10px;
+    z-index: 10;
+    margin-top: 3px;
+  }
+  
+  #ScreenSection { /* Section of Screens */
+    width: 480px;
+    height: 150px;
+    background-color: rgb(0, 0, 0);
+    margin-left: 10px;
+    border-radius: 14px;
+    pointer-events: none;
+  }
+  
+  #mainScreen {
+    color: chartreuse;
+    margin-top: 15px;
+    width: 100% !important;
+    height: 110px;
+    background-color: black;
+    border-color: #009a22;
+    border-bottom: black;
+    font-size: 30px;
+    font-weight: 700;
+    direction: ltr;
+    padding-left: 15px;
+    padding-right: 15px;
+    border-radius: 8px;
+    font-family: "Quantico", sans-serif;
+  }
+  
+  #SubScreen {
+    color: rgb(0, 0, 0);
+    background-color: #000000;
+    border: #000000;
+    margin-left: 33%;
+  }
+  
+  #TipButtonSection {
+    width: 96%;
+    height: 50px;
+    background-color: #000000;
+    margin-inline: 2%;
+    border-radius: 12px;
+    border: 2px solid;
+    border-color: #009a22;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    align-content: center;
+    padding-inline: 5px;
+    color: chartreuse;
+  }
+  
+  .TopBarBtns {
+    width: 72px;
+    height: 40px;
+    background-color: rgb(0, 0, 0);
+    border-radius: 24px;
+    border-radius: 12px;
+    border: 2px solid;
+    border-color: #009a22;
+    font-family: "Times New Roman", Times, serif;
+    color: chartreuse;
+  }
+  
+  #MatriX { /* MatriX Button Style */
+    width: 150px;
+    height: 40px;
+    background-color: rgb(0, 0, 0);
+    border-radius: 12px;
+    border: 2px solid;
+    border-color: #009a22;
+    font-family: "Times New Roman", Times, serif;
+    letter-spacing: 2px;
+    font-weight: 900;
+    color: chartreuse;
+    font-size: 1.1rem;
+  }
+  
+  #NumberSection {
+    width: 350px;
+    height: 320px;
+    background-color: rgb(0, 0, 0);
+    margin-left: 10px;
+    margin: 5px;
+    float: left;
+    border-radius: 12px;
+    border: 2px solid;
+    border-color: rgb(0, 0, 0);
+  }
+  
+  .numbers {
+    width: 85px;
+    height: 60px;
+    background-color: rgb(0, 0, 0);
+    border-radius: 24px;
+    margin-left: 23px;
+    margin-top: 15px;
+    border-radius: 12px;
+    border: 0.5px solid;
+    border-color: #009a22;
+    box-shadow: 1px 1px 1px 1px #36ba01;
+    text-align: center;
+    line-height: 20px;
+  }
+  .numbers:hover {
+    border-color: chartreuse;
+    font-size: 0.4rem;
+  }
+  .numbers:active {
+    box-shadow: 1px 1px 1px 1px #000000;
+  }
+  #AsgnBar {
+    width: 120px;
+    height: 310px;
+    background-color: rgb(0, 0, 0);
+    margin-top: 10px;
+    float: left;
+    border-radius: 12px;
+    border: 2px solid;
+    border-color: #009a22;
+  
+    justify-content: space-between;
+  }
+  
+  .OprBtn {
+    width: 50px;
+    height: 100px;
+    background-color: rgb(0, 0, 0);
+    border-radius: 24px;
+    margin-inline: 3px;
+    margin-block: 5px;
+    border-radius: 12px;
+    border: 1px solid;
+    border-color: #009a22;
+    box-shadow: 1px 2px #36ba01;
+  }
+  .OprBtn:hover {
+    border-color: chartreuse;
+  }
+  .OprBtn:active {
+    box-shadow: 1px 1px 1px 1px #000000;
+  }
+  #AsgnBtn {
+    width: 107px;
+    height: 70px;
+    background-color: rgb(0, 0, 0);
+    border-radius: 24px;
+    margin-inline: 5px;
+    margin-top: 12px;
+    border-radius: 12px;
+    border: 2px solid;
+    border-color: #36ba01;
+    box-shadow: 0px 1px #36ba01;
+  }
+  #AsgnBtn:active {
+    box-shadow: 0px 3px #000000;
+    border: 1px solid;
+  }
+  
+  #AsgnBtn:hover {
+    border-color: chartreuse;
+  }
+  
+  #clear:active {
+    border-color: red;
+  }
+  #delete:active {
+    border-color: red;
+  }
+  
+  #NumberSection button,
+  #AsgnBar button {
+    color: #12d83d;
+    font-size: 2rem;
+    font-family: "Quantico", sans-serif;
+    font-weight: bolder;
+    transition: 0.5s;
+  }
+  
